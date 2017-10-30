@@ -1,0 +1,30 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[requires]
+python_version = "2.7"
+
+
+[dev-packages]
+
+
+
+[packages]
+
+Flask = "*"
+Flask-Bcrypt = "*"
+Flask-Login = "*"
+Flask-Mail = "*"
+Flask-Migrate = "*"
+Flask-Script = "*"
+Flask-SQLAlchemy = "*"
+Flask-WTF = "*"
+gunicorn = "*"
+itsdangerous = "*"
+psycopg2 = "*"
+termcolor = "*"
+WTForms = "*"

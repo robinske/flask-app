@@ -1,5 +1,5 @@
 from threading import Thread
-from flask.ext.mail import Message
+from flask_mail import Message
 from app import app, mail
 
 
@@ -8,7 +8,7 @@ def send(recipient, subject, body):
     Send a mail to a recipient. The body is usually a rendered HTML template.
     The sender's credentials has been configured in the config.py file.
     '''
-    sender = app.config['ADMINS'][0]
+    sender = app.config['MAIL_SENDER']
     message = Message(subject, sender=sender, recipients=[recipient])
     message.html = body
     # Create a new thread

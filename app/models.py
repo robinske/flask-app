@@ -1,5 +1,5 @@
 from sqlalchemy.ext.hybrid import hybrid_property
-from flask.ext.login import UserMixin
+from flask_login import UserMixin
 
 from app import db, bcrypt
 
@@ -17,6 +17,9 @@ class User(db.Model, UserMixin):
     confirmation = db.Column(db.Boolean)
     _password = db.Column(db.String)
 
+    def __repr__(self):
+        return '<email {}>'.format(self.email)
+
     @property
     def full_name(self):
         return '{} {}'.format(self.first_name, self.last_name)
@@ -30,8 +33,10 @@ class User(db.Model, UserMixin):
         self._password = bcrypt.generate_password_hash(plaintext)
 
     def check_password(self, plaintext):
-        return bcrypt.check_password_hash(self.password, plaintext)
+        try:
+            return bcrypt.check_password_hash(self.password, plaintext)
+        except ValueError:
+            return "Invalid password"
 
     def get_id(self):
         return self.email
-

@@ -1,4 +1,4 @@
-from flask.ext.wtf import Form
+from flask_wtf import FlaskForm
 from wtforms import TextField, PasswordField
 from wtforms.validators import (Required, Length, Email, ValidationError,
                                 EqualTo)
@@ -27,7 +27,7 @@ class Unique(object):
             raise ValidationError(self.message)
 
 
-class Forgot(Form):
+class Forgot(FlaskForm):
 
     ''' User forgot password form. '''
 
@@ -35,7 +35,7 @@ class Forgot(Form):
                       description='Email address')
 
 
-class Reset(Form):
+class Reset(FlaskForm):
 
     ''' User reset password form. '''
 
@@ -46,7 +46,7 @@ class Reset(Form):
     confirm = PasswordField(description='Confirm password')
 
 
-class Login(Form):
+class Login(FlaskForm):
 
     ''' User login form. '''
 
@@ -56,23 +56,23 @@ class Login(Form):
                              description='Password')
 
 
-class SignUp(Form):
+class SignUp(FlaskForm):
 
     ''' User sign up form. '''
 
     first_name = TextField(validators=[Required(), Length(min=2)],
-                     description='Name')
+                           description='Name')
     last_name = TextField(validators=[Required(), Length(min=2)],
-                        description='Surname')
-    phone = TextField(validators=[Required(), Length(min=6)],
+                          description='Surname')
+    phone = TextField(validators=[Required(), Length(min=10)],
                       description='Phone number')
     email = TextField(validators=[Required(), Email(),
                                   Unique(User, User.email,
                                          'This email address is ' +
                                          'already linked to an account.')],
                       description='Email address')
-    password = PasswordField(validators=[
-        Required(), Length(min=6),
-        EqualTo('confirm', message='Passwords must match.')
-    ], description='Password')
+    password = PasswordField(validators=[Required(), Length(min=6),
+                                         EqualTo('confirm',
+                                                 message='Passwords must match.')],
+                             description='Password')
     confirm = PasswordField(description='Confirm password')
