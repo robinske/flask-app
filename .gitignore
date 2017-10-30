@@ -2,3 +2,5 @@
 *.log
 *.pyc
 config.py
+env/*
+.DS_Store

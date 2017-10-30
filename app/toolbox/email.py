@@ -8,7 +8,7 @@ def send(recipient, subject, body):
     Send a mail to a recipient. The body is usually a rendered HTML template.
     The sender's credentials has been configured in the config.py file.
     '''
-    sender = app.config['ADMINS'][0]
+    sender = app.config['ADMIN']
     message = Message(subject, sender=sender, recipients=[recipient])
     message.html = body
     # Create a new thread

@@ -1,7 +1,7 @@
 import logging
+import os
 
-from app.config_common import *
-
+TIMEZONE = 'America/Los_Angeles'
 
 # DEBUG can only be set to True in a development environment for security reasons
 DEBUG = True
@@ -17,13 +17,13 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///app.db'
 SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 # Configuration of a Gmail account for sending mails
-MAIL_SERVER = 'smtp.googlemail.com'
+MAIL_SERVER = 'smtp.gmail.com'
 MAIL_PORT = 465
 MAIL_USE_TLS = False
 MAIL_USE_SSL = True
-MAIL_USERNAME = 'flask.boilerplate'
-MAIL_PASSWORD = 'flaskboilerplate123'
-ADMINS = ['flask.boilerplate@gmail.com']
+MAIL_USERNAME = os.environ['EMAIL_USER']
+MAIL_PASSWORD = os.environ['EMAIL_PASSWORD']
+ADMIN = "{}@gmail.com".format(MAIL_USERNAME)
 
 # Number of times a password is hashed
 BCRYPT_LOG_ROUNDS = 12
