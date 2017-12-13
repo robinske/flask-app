@@ -1,5 +1,5 @@
 from sqlalchemy.ext.hybrid import hybrid_property
-from flask.ext.login import UserMixin
+from flask_login import UserMixin
 
 from app import db, bcrypt
 
@@ -34,4 +34,3 @@ class User(db.Model, UserMixin):
 
     def get_id(self):
         return self.email
-

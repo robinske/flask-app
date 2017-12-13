@@ -9,4 +9,4 @@ PROJECT    := $(shell basename $(PWD))
 ## Install dependencies
 .PHONY: install
 install:
-	pip install -r requirements.txt
+	pipenv install
