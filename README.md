@@ -23,7 +23,7 @@ My personal Flask boilerplate. A set of defaults that works well for me!
 
 ### Virtual environment
 
-``
+```
 pip install virtualenv
 virtualenv venv
 venv/bin/activate
@@ -31,7 +31,7 @@ make install
 make dev
 python manage.py initdb
 python manage.py runserver
-``
+```
 
 ## License
 
