@@ -2,4 +2,5 @@
 
 virtualenv env
 source env/bin/activate
-gunicorn run:app
+pipenv install --system
+gunicorn run

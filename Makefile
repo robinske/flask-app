@@ -9,4 +9,4 @@ PROJECT    := $(shell basename $(PWD))
 ## Install dependencies
 .PHONY: install
 install:
-	pipenv install
+	pipenv install --system
