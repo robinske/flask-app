@@ -2,5 +2,4 @@
 
 virtualenv env
 source env/bin/activate
-pipenv install --system
-gunicorn run
+gunicorn wsgi:app
