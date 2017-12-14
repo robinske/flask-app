@@ -12,7 +12,7 @@ TIMEZONE = 'America/Los_Angeles'
 SECRET_KEY = 'houdini'
 
 # Database choice
-SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'app.db')
+SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/flask-app'
 SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 # Configuration of a Gmail account for sending mails
