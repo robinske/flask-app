@@ -2,4 +2,4 @@
 
 virtualenv env
 source env/bin/activate
-gunicorn app:app
+gunicorn run:app
