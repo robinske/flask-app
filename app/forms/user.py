@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import TextField, PasswordField
 from wtforms.validators import (Required, Length, Email, ValidationError,
                                 EqualTo)
-from project.models import User
+from app.models import User
 
 
 class Unique(object):

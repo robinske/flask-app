@@ -18,12 +18,12 @@ from flask_bcrypt import Bcrypt
 bcrypt = Bcrypt(app)
 
 # Import the views
-from project.views import main, user, error
+from app.views import main, user, error
 app.register_blueprint(user.userbp)
 
 # Setup the user login process
 from flask_login import LoginManager
-from project.models import User
+from app.models import User
 
 login_manager = LoginManager()
 login_manager.init_app(app)

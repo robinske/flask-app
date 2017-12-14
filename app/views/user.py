@@ -2,9 +2,9 @@ from flask import (Blueprint, render_template, redirect, url_for,
                    abort, flash)
 from flask_login import login_user, logout_user, login_required
 from itsdangerous import URLSafeTimedSerializer
-from project import app, db, models
-from project.forms import user as user_forms
-from project.toolbox import email
+from app import app, db, models
+from app.forms import user as user_forms
+from app.toolbox import email
 
 # Serializer for generating random tokens
 ts = URLSafeTimedSerializer(app.config['SECRET_KEY'])

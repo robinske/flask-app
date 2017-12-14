@@ -1,7 +1,7 @@
 from flask_script import Manager, prompt_bool
 from termcolor import colored
 
-from project import app, db, models
+from app import app, db, models
 
 
 manager = Manager(app)
