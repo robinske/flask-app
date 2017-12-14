@@ -2,5 +2,5 @@
 
 virtualenv env
 source env/bin/activate
-make install && make dev
+make install
 python manage.py initdb

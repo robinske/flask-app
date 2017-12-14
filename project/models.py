@@ -1,7 +1,7 @@
 from sqlalchemy.ext.hybrid import hybrid_property
 from flask_login import UserMixin
 
-from app import db, bcrypt
+from project import db, bcrypt
 
 
 class User(db.Model, UserMixin):
