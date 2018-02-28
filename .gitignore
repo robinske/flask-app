@@ -1,6 +1,5 @@
 *.db
 *.log
 *.pyc
-app_config.py
 env/*
 .DS_Store
