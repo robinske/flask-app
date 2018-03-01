@@ -4,30 +4,30 @@ My personal Flask boilerplate. A set of defaults that works well for me!
 
 ## Setup
 
-### Vanilla
+- Create the database (uses [Postgres](https://www.postgresql.org/download/))
+
+        `psql -c CREATE DATABASE boilerplate;`
 
 - Install the requirements and setup the development environment.
 
-	`./setup.sh`
+        `./setup.sh`
 
 - Run the application.
 
-	`./run.sh`
+        `./run.sh`
 
-- Navigate to `localhost:8000`.
+- Navigate to [localhost:8000](localhost:8000).
 
 
-### Virtual environment
+## Deploy to Heroku with Git
 
-```
-pip install virtualenv
-virtualenv venv
-venv/bin/activate
-make install
-make dev
-python manage.py initdb
-python manage.py runserver
-```
+Create a [Heroku account](https://signup.heroku.com/)
+
+Download the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+
+        `heroku create`
+        `git push heroku master`
+
 
 ## License
 
